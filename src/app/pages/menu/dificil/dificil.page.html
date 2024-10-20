@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary" class="ion-text-center">
+    <ion-chip
+      mode="ios"
+      outline="true"
+      style="
+        font-size: 15px;
+        margin-bottom: 10px;
+        background: whitesmoke;
+        color: darkmagenta;
+      "
+      class="heartbeat"
+      *ngIf="jugando"
+    >
+      <ion-label color="white"
+        >SOLO TIENES {{ seconds }} PARA TERMINAR</ion-label
+      >
+    </ion-chip>
+    <ion-chip
+      mode="ios"
+      outline="true"
+      style="
+        font-size: 15px;
+        margin-bottom: 10px;
+        background: whitesmoke;
+        color: darkmagenta;
+      "
+      (click)="reset()"
+      class="heartbeat"
+      *ngIf="!jugando"
+    >
+      <ion-label color="white">JUGAR DE NUEVO</ion-label>
+    </ion-chip>
+  </ion-toolbar>
+</ion-header>
+<body class="centrado">
+  <div class="container">
+    <div class="resultados" *ngIf="!jugando">
+      <h1
+        style="
+          text-align: center;
+          border-radius: 20px;
+          padding: 5px 10px;
+          font-size: 30px;
+          color: rgb(237, 207, 237);
+          background: linear-gradient(to right, #b006d0, #4e0894) !important;
+        "
+      >
+        Tus resultados:
+      </h1>
+      <div class="timer">
+        <span color="darkmagenta">PUNTAJE: {{puntos}}</span>
+        <span color="darkmagenta">FECHA: {{fechaFormateada}}</span>
+        <span color="darkmagenta">SEGUNDOS TRANSCURIDOS: {{segTotales}}</span>
+      </div>
+    </div>
+    <div id="game" *ngIf="jugando">
+      <div
+        *ngFor="let card of cards"
+        class="card"
+        [ngClass]="{'active': card.active}"
+        (click)="activate(card)"
+      >
+        <div class="back"></div>
+        <div class="face"><img [src]="card.image" alt="Card Image" /></div>
+      </div>
+    </div>
+  </div>
+  <br />
+</body>

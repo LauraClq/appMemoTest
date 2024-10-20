@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary" class="ion-text-center">
+    <ion-chip
+      mode="ios"
+      outline="true"
+      style="
+        font-size: 15px;
+        margin-bottom: 10px;
+        background: whitesmoke;
+        color: darkmagenta;
+        width: 40vh;
+      "
+    >
+    <ion-label style="margin-left: 40px; font-weight: bold;">TOP 5 MEJORES JUGADORES</ion-label>
+    </ion-chip>
+  </ion-toolbar>
+</ion-header>
+<body class="centrado">
+  <ion-content style="--background: none;">
+    <div class="container">
+      <div class="seleccionarModo">
+        <!-- <ion-list>
+          <ion-item>
+            <ion-select value="facil" aria-label="fruit" label="Resultados del " [(ngModel)]="seleccionNivel" (ngModelChange)="mostrarNivel(seleccionNivel)">
+              <ion-select-option value="facil">✨ Nivel: Fácil ✨</ion-select-option>
+              <ion-select-option value="medio">✨ Nivel: Medio ✨</ion-select-option>
+              <ion-select-option value="dificil">✨ Nivel: Difícil ✨</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list> -->
+       
+<ion-segment value="default" color="light" style="background-color: rgb(182 45 246);">
+  <ion-segment-button value="default" (click)="mostrarNivel('facil')" class="facil">
+    <ion-label>✨Fácil✨</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="segment" (click)="mostrarNivel('medio')" class="medio">
+    <ion-label>✨Medio✨</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="buttons" (click)="mostrarNivel('dificil')" class="dificil">
+   <ion-label>✨Difícil✨</ion-label>
+  </ion-segment-button>
+</ion-segment>
+        <div class="spinner" *ngIf="loadingF">
+          <img src="../../../assets/spinner-icono.png" alt="Spinner">
+        </div>
+        <p *ngIf="!jugadoresFacil.length && !loadingF"> Aún no hay puntajes. ¡Sé el primero!</p>
+        <ion-card *ngFor="let jugador of topFacil; let i = index" [class.first-item]="i === 0" [class.second-item]="i === 1" [class.three-item]="i ===2" [class.four-item]="i === 3" [class.five-item]="i === 4">
+          <ion-card-content style="padding: 0;">
+            <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+            <ion-item>
+              <ion-avatar slot="start">
+                <ion-label>0{{i + 1}}</ion-label>
+              </ion-avatar>
+            </ion-item>
+            <ion-grid>
+            <ion-row style="justify-content: space-between;">
+              <ion-col size="3" color="dark"><b>Nombre</b></ion-col>
+              <ion-col size="3" color="dark"><b>Tiempo</b></ion-col>
+              <ion-col size="4" color="dark"><b>Fecha</b></ion-col>
+            </ion-row>
+            <ion-row style="justify-content: space-between;">
+              <ion-col size="3" class="contenido">{{ jugador.nombre }}</ion-col>
+              <ion-col size="3" class="contenido">{{ jugador.tiempoForm }}</ion-col>
+              <ion-col size="4" class="contenido">{{ jugador.fechaForm }}</ion-col>
+            </ion-row>
+              </ion-grid>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </ion-content>
+</body>
+

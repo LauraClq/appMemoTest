@@ -1,0 +1,208 @@
+.selected {
+  --background: var(--ion-color-success);
+}
+
+.notselected {
+  --background: var(--ion-color-tertiary);
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+.centrado {
+  width: 100vw;
+  height: 100vh;
+  flex: auto;
+  align-items: center;
+}
+
+body {
+  position: relative;
+  overflow: hidden; // Asegura que el pseudo-elemento no se desborde
+  background: none; // Elimina el fondo del body para que solo se vea el pseudo-elemento
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../../../../assets/icon/fondo.png") no-repeat fixed center;
+  // background: url("../../../assets/img/fondoLogin.webp") no-repeat center center / cover;
+  filter: blur(
+    3px
+  ); // Ajusta el valor de blur según la cantidad de desenfoque deseada
+  z-index: -1; // Asegura que el pseudo-elemento esté detrás del contenido
+}
+
+#game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  margin-top: 35px;
+}
+
+.card {
+  width: 110px;
+  height: 130px;
+  perspective: 1000px;
+  position: relative;
+}
+.card .back,
+.card .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  // background-color: linear-gradient(to right, #B006D0, #4E0894);
+  border: 4px solid #FCCD2A;
+  border-radius: 15px;
+  /* Añade el borde amarillo */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .back {
+  background-color: linear-gradient(
+    to right,
+    #FFEB00,
+    #f5ec8b
+  ); /* Color de fondo para la parte trasera */
+  transform: rotateY(0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .back::before {
+  content: "";
+  background-image: url("../../../../assets/incognito.png"); /* Reemplaza con la URL de tu logo */
+  background-size: contain; /* Ajusta el tamaño del logo */
+  background-position: center; /* Centra el logo */
+  background-repeat: no-repeat; /* Evita que el logo se repita */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card .face {
+  background: linear-gradient(to right, #FFEB00, #f5ec8b);
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+.card.active .back {
+  transform: rotateY(180deg);
+}
+
+.card.active .face {
+  transform: rotateY(0deg);
+}
+
+//animacion temporizador
+.heartbeat {
+  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+span {
+  font-size: 30px;
+  font-weight: bold;
+  color: #bf00ff;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20vh;
+  width: auto;
+}
+
+ion-label {
+  font-weight: bold;
+  font-size: 18px;
+}

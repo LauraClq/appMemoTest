@@ -1,0 +1,74 @@
+.container {
+  text-align: center;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 10vh;
+}
+.centrado {
+  width: 100vw;
+  height: 100vh;
+  flex: auto;
+  align-items: center;
+}
+
+body {
+  position: relative;
+  overflow: hidden; // Asegura que el pseudo-elemento no se desborde
+  background: none; // Elimina el fondo del body para que solo se vea el pseudo-elemento
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../../../assets/icon/fondo.png") no-repeat fixed center;
+  // background: url("../../../assets/img/fondoLogin.webp") no-repeat center center / cover;
+  filter: blur(3px); // Ajusta el valor de blur según la cantidad de desenfoque deseada
+  z-index: -1; // Asegura que el pseudo-elemento esté detrás del contenido
+}
+
+.header-image {
+  width: 15rem;
+  margin: auto;
+}
+
+.formulario{
+  background-color: #ffffffe0;
+  padding: 20px;
+  border-radius: 10px;
+  ion-icon{
+    margin-right: 6px;
+  }
+}
+
+.btn-login{
+  margin-top: 30px;
+}
+
+ion-item {
+  --ion-item-background: transparent !important;
+  margin-top: 15px;
+}
+
+.horizontal-line {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+
+.line {
+  flex: 1;
+  border-bottom: 2px solid #9c1de0; /* Estilo de la línea */
+}
+
+.line-text {
+  padding: 0 10px; /* Espaciado alrededor del texto */
+  color: #9c1de0;
+  font-size: 15px;
+}

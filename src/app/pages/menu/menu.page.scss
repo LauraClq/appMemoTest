@@ -1,0 +1,82 @@
+// .btn-cerrar{
+//     --background: #3A8C6E;
+//     color: #fefae0;
+//     padding: 20px 30px 20px 30px;
+//     font-size: 15px;
+// }
+
+// .container {
+//   text-align: center;
+//   position: relative;
+//   left: 0;
+//   right: 0;
+//   top: 10vh;
+//   // transform: translateY(-50%);
+// }
+// .centrado {
+//   width: 100vw;
+//   height: 100vh;
+//   flex: auto;
+//   align-items: center;
+// }
+
+// body {
+//   position: relative;
+//   overflow: hidden; // Asegura que el pseudo-elemento no se desborde
+//   background: none; // Elimina el fondo del body para que solo se vea el pseudo-elemento
+//  }
+
+//  body::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background: url("../../../assets/icon/fondo.png") no-repeat fixed center;
+//   // background: url("../../../assets/img/fondoLogin.webp") no-repeat center center / cover;
+//   // filter: blur(5px); // Ajusta el valor de blur según la cantidad de desenfoque deseada
+//   z-index: -1; // Asegura que el pseudo-elemento esté detrás del contenido
+// }
+
+
+
+.btn-dificil {
+    background-color: #F5004F;
+}
+
+.btn-facil {
+    background-color: #73EC8B;
+}
+
+.btn-medio{
+  background-color: #FFEB55;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  /* Divide la pantalla en dos filas iguales */
+  height: 100%;
+}
+
+.btn-dificil,
+.btn-facil,
+.btn-medio {
+  
+  font-family: monospace;
+  color: rgb(75, 0, 107);
+  font-size: 25px;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  /* Centra horizontalmente el contenido */
+  align-items: center;
+  /* Centra verticalmente el contenido */
+  border: 2px solid #999;
+  /* Borde de 2px sólido */
+  border-radius: 8px;
+  /* Bordes redondeados */
+  box-shadow: 2px 2px 5px #aaa;
+  /* Sombra */
+}

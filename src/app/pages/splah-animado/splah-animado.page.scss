@@ -1,0 +1,124 @@
+body{
+  position: relative;
+  overflow: hidden; // Asegura que el pseudo-elemento no se desborde
+  background: none; // Elimina el fondo del body para que solo se vea el pseudo-elemento
+}
+
+.centrado {
+  width: 100vw;
+  height: 100vh;
+  flex: auto;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10vh;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../../../assets/icon/fondo.png") no-repeat fixed center;
+  background-size: cover;
+  filter: blur(4px); // Ajusta el valor de blur según la cantidad de desenfoque deseada
+  z-index: -1; // Asegura que el pseudo-elemento esté detrás del contenido
+}
+
+.custom-logo {
+  width: 140px;
+  height: 140px;
+  background: #fefae0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-duration: 2.5s;
+  animation-name: spin;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-iteration-count: 2;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  //animation: 2.5s spin ease-in-out 1s 2 normal forwards;
+}
+
+.icono{
+    max-width: 120%;
+}
+
+.icono-logo{
+    max-width: 85%;
+}
+
+.custom-texto-arriba{
+  max-width: 20vh;
+  margin: 10vh;
+}
+.custom-texto-abajo{
+  max-width: 20vh;
+  margin: 10vh;
+}
+
+
+//animacion de splash
+@keyframes spin {
+    0%{
+
+    }
+    50%{
+        scale: 2;
+        transform: rotate(0);
+        border-radius: 0;
+    }
+    100%{
+        transform: rotate(360deg);
+        border-radius: 50%;
+        scale: 2;
+    }
+}
+
+//animacion de texto 
+.scale-in-hor-left {
+	-webkit-animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-hor-left {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-hor-left {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,136 @@
+.container {
+  text-align: center;
+  position: relative;
+}
+.centrado {
+  width: 100vw;
+  height: 100vh;
+  flex: auto;
+  align-items: center;
+}
+
+body {
+  position: relative;
+  overflow: hidden; // Asegura que el pseudo-elemento no se desborde
+  background: none; // Elimina el fondo del body para que solo se vea el pseudo-elemento
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../../../assets/icon/fondo.png") no-repeat fixed center;
+  // background: url("../../../assets/img/fondoLogin.webp") no-repeat center center / cover;
+  filter: blur(
+    3px
+  ); // Ajusta el valor de blur según la cantidad de desenfoque deseada
+  z-index: -1; // Asegura que el pseudo-elemento esté detrás del contenido
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #bf00ff;
+}
+
+ion-spinner {
+  width: 90px;
+  height: 90px;
+}
+
+ion-col {
+  text-align: center;
+  padding: 0px;
+  color: darkmagenta;
+}
+
+.contenido {
+  color: black;
+  font-size: 15px;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 20px;
+  animation: spin 1s linear infinite;
+}
+
+.spinner img {
+  max-width: 40%;
+  max-height: 40%;
+}
+
+ion-item:first-child {
+  font-weight: bold;
+  text-align: center;
+}
+
+ion-card {
+  padding: 5px;
+  height: 90px;
+  border-radius: 10px;
+  box-shadow: 0 4px 7px 2px rgb(0 0 0 / 25%);
+  background-color: rgb(207, 126, 247);
+}
+
+ion-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+}
+
+ion-label{
+  font-weight: bold;
+}
+
+.first-item {
+  background-color: rgb(255, 217, 0); /* Fondo gris claro */
+  transition: transform 0.3s ease-in-out;
+  margin-top: 35px;
+  ion-item:first-child {
+   --background: rgb(255, 217, 0);;
+  }
+}
+
+.second-item {
+  background-color: #ffdd32; /* Fondo gris claro */
+  transition: transform 0.3s ease-in-out;
+
+  ion-item:first-child {
+   --background: #ffdd32;
+  }
+}
+
+.three-item {
+  background-color: #FFE761; /* Fondo gris claro */
+  transition: transform 0.3s ease-in-out;
+  ion-item:first-child {
+   --background: #FFE761;
+  }
+}
+
+.four-item {
+  background-color: #FDEA74; /* Fondo gris claro */
+  transition: transform 0.3s ease-in-out;
+
+  ion-item:first-child {
+   --background: #FDEA74;
+  }
+}
+
+.five-item {
+  background-color: #FFF395; /* Fondo gris claro */
+  transition: transform 0.3s ease-in-out;
+
+  ion-item:first-child {
+   --background: #FFF395;
+  }
+}
